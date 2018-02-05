@@ -1,0 +1,20 @@
+{
+  "name": "index-arria-workshop",
+  "version": "1.0.0",
+  "description": "web app to generate narrative on your portfolio",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cfenv": "^1.0.4",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "jsonfile": "^4.0.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "vcap_services": "^0.3.4"
+  }
+}

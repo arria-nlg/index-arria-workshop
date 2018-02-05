@@ -1,0 +1,21 @@
+{
+  "portfolio": {
+    "url": "",
+    "writer": {
+      "userid": "",
+      "password": ""
+    },
+    "reader": {
+      "userid": "",
+      "password": ""
+    }
+  },
+  "instrument": {
+    "url": "",
+    "token": ""    
+  },
+	"arria": {
+		"url": "",
+		"key": ""
+  }
+}
