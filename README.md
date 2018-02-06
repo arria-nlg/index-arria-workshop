@@ -10,7 +10,7 @@ During this workshop users will learn:
 * Send the portfolio data to your Arria API to generate the narrative.
 
 <p align="center">
-  <img width="800"  src="readme_images/Portfolio.Narrate Architecture.png">
+  <img width="800"  src="readme_images/architecture.png">
 </p>
 
 

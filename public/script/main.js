@@ -29,8 +29,11 @@ function submitPortfolio(event) {
     console.log('submitting portfolio:' + ptf);
     getPortfolioHoldings(ptf)
         .then(function (holdings) {
-            addHoldingsTable(holdings);
-            return getNarrative(holdings);
+            let rollup = rollupHoldings(holdings);
+            //add the portfolio name 
+            rollup.portfolioName = ptf;
+            addHoldingsTable(rollup);
+            return getNarrative(rollup);
         }).then(function (narrative) {
             let content = narrative[0].result;
             addNarrative(content);
@@ -118,7 +121,7 @@ function getPortfolioHoldings(portfolioName) {
 }
 
 
-function getNarrative() {
+function getNarrative(narrativeData) {
     var data = {
         "data": [
             {
@@ -190,8 +193,14 @@ function getNarrative() {
 
 }
 
+function addHoldingsTable(tableData) {
+    
+    console.log('adding table');
+    // add table
+    document.getElementById('holdings-table').innerText = JSON.stringify(tableData, null, 2);
+}
 
-function addHoldingsTable(holdings) {
+function rollupHoldings(holdings) {
     // roll up the data
     console.log('adding table');
     // add a table of holdings to the page
@@ -209,17 +218,16 @@ function addHoldingsTable(holdings) {
 
 
     // add the total portfolio
-    let wholePortfolio = [{"key":'Portfolio', "values":nested}]
+    let wholePortfolio = {"key":'Portfolio' ,"values":nested};
 
     // roll up the values
-    wholePortfolio.forEach(function(node) {
+    [wholePortfolio].forEach(function(node) {
         sumChildren(node, ptfValue);
     });
 
     console.log(wholePortfolio);
-
-    // add table
-    document.getElementById('holdings-table').innerText = JSON.stringify(wholePortfolio, null, 2);
+    return wholePortfolio;
+    
 }
 
 function sumChildren(node, total) {

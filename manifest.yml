@@ -1,0 +1,13 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: index-arria-app
+  host: index-arria-app
+  disk_quota: 128M
+  buildpack: sdk-for-nodejs
+  services:
+  - Investment-Portfolio
+  - Instrument-Analytics
+  - Arria-NLG-1
