@@ -12,6 +12,7 @@
     "cfenv": "^1.0.4",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
+    "fs-extra": "^5.0.0",
     "jsonfile": "^4.0.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
