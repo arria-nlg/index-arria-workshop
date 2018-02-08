@@ -57,7 +57,7 @@ Create the following services in IBM Cloud:
 * [**Instrument Analytics**](https://console.ng.bluemix.net/catalog/services/instrument-analytics)
 * [**Arria Natural Language Generation APIs**](https://console.bluemix.net/catalog/services/natural-language-generation-apis)
 
-<br>For the `Arria Natural Language Generation API` service, you will need to register go to step 3 to generate the url and token to place into the service.
+<br>For the `Arria Natural Language Generation API` service, this is only needed if you are running the app in IBM Cloud. You will need to register go to step 3 to generate the url and token to place into the service.
 
 ## 3. Sign up to Arria
 
