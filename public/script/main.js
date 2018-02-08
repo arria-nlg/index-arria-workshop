@@ -122,56 +122,20 @@ function getPortfolioHoldings(portfolioName) {
 
 
 function getNarrative(narrativeData) {
-    var data = {
-        "data": [
+
+    var dataWrapper = {
+	    "data":[
             {
-                "id": "Primary",
-                "type": "1d",
-                "dataSet": [
-                    [
-                        "Jurisdiction",
-                        "Type",
-                        "StateLandArea",
-                        "StatePop2010",
-                        "StatePop2016",
-                        "Capital",
-                        "CapitalPop2010",
-                        "CapitalPop2016",
-                        "HeadOfGovt",
-                        "Party",
-                        "Terms",
-                        "Daughters",
-                        "Sons",
-                        "NumDaughters",
-                        "NumSons"
-                    ],
-                    [
-                        "New South",
-                        "Wales",
-                        "State",
-                        800641,
-                        7238800,
-                        7618200,
-                        "Sydney",
-                        4183471,
-                        4526479,
-                        "Gladys Berejiklian",
-                        "Liberal",
-                        1,
-                        0,
-                        0
-                    ]
-                ]
+                "id":"Primary",
+                "type":"json",
+                "jsonData": narrativeData
             }
-        ],
-        "options": {
-            "nullValueBehaviour": "SHOW_IDENTIFIER"
-        }
-    };
+        ]
+    }
 
     return fetch('api/narrative', {
         method: 'POST', // or 'PUT'
-        body: JSON.stringify({ "arriaData": data.data }),
+        body: JSON.stringify({ "arriaData": dataWrapper.data }),
         headers: new Headers({
             'Content-Type': 'application/json'
         })
