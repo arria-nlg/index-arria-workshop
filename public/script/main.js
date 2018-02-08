@@ -19,9 +19,6 @@ function loadPortfolios() {
         });
 }
 
-
-
-
 function submitPortfolio(event) {
     event.preventDefault();
     let e = document.getElementById('portfolio-select');
@@ -62,6 +59,7 @@ function getPortfolios() {
 // get the holdings and analytics
 function getPortfolioHoldings(portfolioName) {
     let holdings;
+    showMessage("Fetching Portfolio...");
     return fetch('api/holdings' + '?portfolio=' + portfolioName)
         .then(function (response) {
             // check the response
@@ -69,6 +67,7 @@ function getPortfolioHoldings(portfolioName) {
                 // pass on the data
                 return response.json();
             }
+            showMessage("Failed to Load Portfolio");
             throw new Error('Returned status:' + response.status + '. Message: ' + response.statusText);
         })
         .then(function (data) {
@@ -85,6 +84,7 @@ function getPortfolioHoldings(portfolioName) {
             return instruments;
         })
         .then(function (instruments) {
+            showMessage("Performing Analysis...");
             // post instruments to get the analytics
             return fetch('api/analytics', {
                 method: 'POST', // or 'PUT'
@@ -100,6 +100,7 @@ function getPortfolioHoldings(portfolioName) {
                 // pass on the data
                 return response.json();
             }
+            showMessage("Portfolio Could Not be Analyzed");
             throw new Error('Returned status:' + response.status + '. Message: ' + response.statusText);
         }).then(function (analytics) {
             console.log(analytics);
@@ -115,14 +116,15 @@ function getPortfolioHoldings(portfolioName) {
             console.log(holdings);
             return holdings;
         })
-        .catch(function (error) {
+        .catch(function (error) {            
             console.log('There was a problem getting holdings: ', error.message);
         });
 }
 
 
 function getNarrative(narrativeData) {
-
+    showMessage("Generating Narrative...");
+    
     var dataWrapper = {
 	    "data":[
             {
@@ -146,6 +148,7 @@ function getNarrative(narrativeData) {
                 // pass on the data
                 return response.json();
             }
+            showMessage("Narrative Could Not Be Generated");
             throw new Error('Returned status:' + response.status + '. Message: ' + response.statusText);
         }).then(function (narrative) {
             console.log(narrative);
@@ -240,9 +243,19 @@ function sumChildren(node, total) {
 
 function addNarrative(narrative) {
     console.log('adding narrative');
-    // add the narrative to the page
+    hideMessage();
     let container = document.getElementById('narrative');
     container.innerHTML = narrative;
+}
+
+function showMessage(message){
+    var container = document.getElementById('loading');
+    container.innerHTML = message;
+}
+
+function hideMessage(){
+    var container = document.getElementById('loading');
+    container.innerHTML = "";
 }
 
 loadPortfolios();
