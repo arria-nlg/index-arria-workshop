@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Portfolio Narrative Generator</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Portfolio Narrative Generator</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
     <!-- page content -->
-    <div class="container">
-        Hello
-
-        <div id="portfolio-selector">
-
-        </div>
+    <div id="banner">
+        <div id="logo-holdeer"></div>
+        <div id="portfolio-selector"></div>
         <div id="request-buttom">
-            
-            
             <select required name="portfolio-list" id="portfolio-select" form="portfolio-form">
-              <option value="" selected disabled hidden>Choose here</option>
+                <option value="" selected disabled hidden>Choose here</option>
             </select>
             <form id="portfolio-form">
-              <input id="portfolio-input" disabled type="submit">
+                <input id="portfolio-input" disabled type="submit">
             </form>
         </div>
-        <div>
-          <br>
-          <br>
-          
-        </div>
-        <div id="narrative">
-            Narrative here...
-          </div>
-          <div>
-            <br>
-            <br>
-
-          </div>
-        <div id="holdings-table">
-          Table here
-        </div>
-        
-
     </div>
-    
+    <div id="content-wrapper">
+        <div id="loading"></div>
+        <div id="content">
+            <div id="narrative">
+            </div>
+            <div>
+                <table id="holdings-table">
+                    <thead>
+                        <th>Sector</th>
+                        <th>Issuer</th>
+                        <th>Position</th>
+                        <th>Units</th>
+                        <th>Unit Value</th>
+                        <th>Total Value</th>
+                    </thead>
+                    <tbody id="table-content">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
   <!-- D3 for chart -->
   <script src="http://d3js.org/d3.v3.min.js"></script>

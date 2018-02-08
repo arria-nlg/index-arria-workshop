@@ -160,8 +160,44 @@ function getNarrative(narrativeData) {
 function addHoldingsTable(tableData) {
     
     console.log('adding table');
-    // add table
-    document.getElementById('holdings-table').innerText = JSON.stringify(tableData, null, 2);
+
+    var tableContent = document.getElementById('table-content');
+    while (tableContent.firstChild) {
+        tableContent.removeChild(tableContent.firstChild);
+    }
+    
+    for(sectorId in tableData.values){
+        var sector = tableData.values[sectorId];
+
+        for(issuerId in sector.values){
+            var issuer = sector.values[issuerId];
+            
+            for(positionId in issuer.values){
+                var position = issuer.values[positionId];
+                addRow(tableContent, position.sectorName, position.companyName, position.instrumentId, position.quantity, position.unitValue, position.positionValue);
+            }
+        }
+    }
+    
+    document.getElementById('holdings-table').style.display= "table";
+}
+
+function addRow(table, sector, issuer, position, units, unitValue, totalValue) {
+    var row = document.createElement("tr");
+    addCell(row, sector);
+    addCell(row, issuer);
+    addCell(row, position);
+    addCell(row, units);
+    addCell(row, "$" + unitValue.toFixed(2));
+    addCell(row, "$" + totalValue.toFixed(2));
+    
+    table.appendChild(row);
+}
+
+function addCell(row, content) {
+    var cell = document.createElement("td");
+    cell.innerText = content;
+    row.appendChild(cell);
 }
 
 function rollupHoldings(holdings) {
