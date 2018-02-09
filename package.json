@@ -4,7 +4,8 @@
   "description": "web app to generate narrative on your portfolio",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "node app.js",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
