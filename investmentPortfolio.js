@@ -224,8 +224,7 @@ if (args[2]) {
     if(args[3]) {
       portfolioName = args[3];
       getPortfolioHoldings(portfolioName);
-    }
-    else {
+    } else {
       getPortfolios();
     }
 
