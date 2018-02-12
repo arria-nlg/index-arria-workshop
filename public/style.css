@@ -42,11 +42,35 @@ body {
     padding-right:20px;
 }
 
+#ibm-logo img{
+    visibility:hidden;
+}
+
 #selection {
     display: flex;
 }
 
+#portfolio-select {
+    height:2.5rem;
+    width:250px;
+    font-size: 16px;
+    
+    background-color:#ecf0f7;
+    font-weight: bold;
+    cursor:pointer;
+    color:#152934;
+}
 
+#portfolio-input {
+    height:2.5rem;
+    margin-left:20px;
+    font-size: 16px;
+    padding:0 1rem;
+    
+    background-color:#ecf0f7;
+    font-weight:bold;
+    cursor:pointer;
+}
 
 #content {
     height: auto;
