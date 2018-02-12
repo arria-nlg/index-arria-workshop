@@ -14,9 +14,8 @@ BASE_URL = "https://investment-portfolio.mybluemix.net/"
  * Each portfolio has a name and the timestamp of when the portfolio was created
  */
 function getPortfolios() {
-  console.log('Getting Portfolios');
+  console.log('Attempting to get all portfolio names');
   
-  // Request
   request( {
     method: 'GET',
     url: BASE_URL + 'api/v1/portfolios',
@@ -31,6 +30,7 @@ function getPortfolios() {
     console.log(body);
     return body;
   } ).catch( function( err ) {
+    // TODO - Check for unauth
     console.log( err );
   } );
 }
@@ -44,12 +44,12 @@ function getPortfolios() {
  *    companyName  - The name of the company.
  *    sectorName   - The business sector the company is involved with, e.g. health, transport.
  */
-function getPortfolioHoldings(portfolio) {
-  //get holdings for the portfolio
-  console.log('get holdings');
+function getPortfolioHoldings(portfolioName) {
+  console.log('Attempting to get portfolio holdings for ' + portfolioName);
+  
   request( {
     method: 'GET',
-    url: BASE_URL + 'api/v1/portfolios/' + portfolio + '/holdings',
+    url: BASE_URL + 'api/v1/portfolios/' + portfolioName + '/holdings',
     auth: {
       username: READER_USER_ID,
       password: READER_PASSWORD
@@ -62,6 +62,7 @@ function getPortfolioHoldings(portfolio) {
     console.log( body );
     return body;
   } ).catch( function( err ) {
+    // TODO - Check for unauth
     console.log( err );
   } );
 }
@@ -72,9 +73,7 @@ function getPortfolioHoldings(portfolio) {
  * If the portfolio already exists, nothing will change (i.e. existing holdings will remain). 
  */
 function loadPortfolio(portfolioName) {
-  //load portfolio
-  console.log('load portfolios');
-  var hash = null;
+  console.log('Attempting to create a new portfolio called ' + portfolioName);
   var timeStamp = +new Date
 
   // Check it doesn't already exist
@@ -97,6 +96,7 @@ function loadPortfolio(portfolioName) {
     console.log( body );
     return body;
   } ).catch( function( err ) {
+    // TODO - Check for unauth
     // Portfolio doesn't exist. Create one.
       
     // Request
@@ -119,6 +119,8 @@ function loadPortfolio(portfolioName) {
       console.log(body);
       console.log("A new portfolio was created")
     } ).catch( function( err ) {
+      // TODO - Check for unauth
+      console.log("Could not create a new portfolio");
       console.log( err );
     } );
   } );
@@ -133,6 +135,7 @@ function loadPortfolio(portfolioName) {
 function loadPortfolioHoldings(portfolio, holdingsJsonFile) {
   //load holdings into portfolo
   var timeStamp = +new Date
+  console.log('Attempting to load holdings from ' + holdingsJsonFile + ' into ' + portfolio);
 
   fs.readFile( holdingsJsonFile, 'utf8' )
   .then( function( body ) {
@@ -152,6 +155,7 @@ function loadPortfolioHoldings(portfolio, holdingsJsonFile) {
   } ).then( function( body ) {
     console.log(body);
   } ).catch( function( err ) {
+    // TODO - Check for unauth
     console.log( err );
   } );
 }
@@ -160,7 +164,50 @@ function loadPortfolioHoldings(portfolio, holdingsJsonFile) {
  *
  */
 function deletePortfolio(portfolioName) {
-  //TODO
+  console.log('Attempting to delete ' + portfolioName);
+  var timeStamp = +new Date
+
+  // Check it already exists
+  request( {
+    method: 'GET',
+    url: BASE_URL + 'api/v1/portfolios/' + portfolioName,
+    auth: {
+      username: READER_USER_ID,
+      password: READER_PASSWORD
+    },
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    qs: { latest: 'true' },
+  } ).then( function( getBody ) {
+    //Portfolio already exists
+      
+    console.log( 'Portfolio found, deleting');
+    
+    target = JSON.parse(getBody);
+    
+    request( {
+      method: 'DELETE',
+      url: BASE_URL + 'api/v1/portfolios/' + portfolioName + '/' + target.portfolio[0].timestamp + "?rev=" + target.portfolio[0]._rev,
+      auth: {
+        username: WRITER_USER_ID,
+        password: WRITER_PASSWORD
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      qs: { latest: 'true' },
+    } ).then( function( body ) {
+      console.log( 'Portfolio deleted');    
+    } ).catch( function( err ) {
+      // TODO - Check for unauth
+      console.log( 'Could not delete the portfolio');
+      return err;
+    } );
+  } ).catch( function( err ) {
+   // TODO - Check for unauth
+   console.log( 'No portfolio named ' + portfolioName + ' exists');
+  } );
 }
 
 /**
