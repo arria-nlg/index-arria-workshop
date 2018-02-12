@@ -2,22 +2,41 @@
 
 A node.js webapp to be used in the Arria workshop.
 
-During this workshop users will learn:
+During this workshop users will learn how to assemble and deploy a web application using IBM Cloud APIs and Arria NLG Studio. You will build up an application that takes an investment portfolio and evaluates what the holdings are worth in the current market. This data is then used to produce a report using natural language generation.
 
+Building this application will show you how to:
+
+* Create financial APIs on IBM Cloud
+* Build and deploy NLG Studio applications that generate text
 * Load and retrieve data from the Investment Portfolio service
-* Send portfolio data to the Instrument Analytics service to retrieve analytics
-* Use Arria Studio to publish a RESTful API to digest portfolio data and create a narrative on your investments through the IBM Cloud service
-* Send the portfolio data to your Arria API to generate the narrative.
+* Analyse the portfolio's value using the Instrument Analytics service
+* Generate narratives from the portfolio data with your NLG Studio API
+* Chain these API calls together to make a node web app
+* Deploy the application on IBM Cloud 
+
+# The Application
+In this tutorial you will build a web application that looks like this:
+
+<p align="center">
+  <img width="800"  src="readme_images/application.png">
+</p>
+
+At the top of the screen you are able to select one of your investment portfolios. You can then use submit to analyse the portfolio and generate a report about it. The general workflow looks like this:
 
 <p align="center">
   <img width="800"  src="readme_images/architecture.png">
 </p>
 
+The application is built around three main APIs:
 
-## Included Components
-+ Bluemix Investment Portfolio
-+ Bluemix Instrument Analytics
-+ Arria NLG
+## IBM Investment Portfolio
+The IBM Investment Portfolio stores information about a user's investment portfolios, including how many holdings they have and in which companies.
+
+## IBM Instrument Analytics
+An API which takes in portfolio information and uses IBM Algorithmics pricing models to judge how much each holding is theoretically worth. This API supports all major asset classes, including equity, fixed income, forwards & futures, options, interest rate products, credit derivatives, indexes and structured products. Our application will use this analytics to value the holdings in the current financial market.
+  
+## Arria NLG Studio
+Arria NLG Studio is a web application allowing users to build and deploy natural language generation systems. Studio can be used to produce reports for any vertical and follows a methodology that makes it easy to get started and natural to build up report complexity. We will use Studio to build an API that can describe the value of a portfolio. 
 
 # Automatically Deploying the Application to IBM Cloud
 
