@@ -30,8 +30,9 @@ function getPortfolios() {
     console.log(body);
     return body;
   } ).catch( function( err ) {
-    // TODO - Check for unauth
-    console.log( err );
+    if(authorized(err, "Reader")){
+      console.log( err );
+    }
   } );
 }
 
@@ -62,8 +63,9 @@ function getPortfolioHoldings(portfolioName) {
     console.log( body );
     return body;
   } ).catch( function( err ) {
-    // TODO - Check for unauth
-    console.log( err );
+    if(authorized(err, "Reader")){
+      console.log( err );
+    }
   } );
 }
 
@@ -96,33 +98,35 @@ function loadPortfolio(portfolioName) {
     console.log( body );
     return body;
   } ).catch( function( err ) {
-    // TODO - Check for unauth
+    
     // Portfolio doesn't exist. Create one.
-      
-    // Request
-    request( {
-      method: 'POST',
-      url: BASE_URL + 'api/v1/portfolios/',
-      auth: {
-        username: WRITER_USER_ID,
-        password: WRITER_PASSWORD
-      },
-      json: {
-        timestamp: timeStamp,
-        name: portfolioName,
-        closed: false,
-        data: {
-          manager: 'John Smith'
+    if(authorized(err, "reader")){   
+      // Request
+      request( {
+        method: 'POST',
+        url: BASE_URL + 'api/v1/portfolios/',
+        auth: {
+          username: WRITER_USER_ID,
+          password: WRITER_PASSWORD
+        },
+        json: {
+          timestamp: timeStamp,
+          name: portfolioName,
+          closed: false,
+          data: {
+            manager: 'John Smith'
+          }
         }
-      }
-    } ).then( function( body ) {
-      console.log(body);
-      console.log("A new portfolio was created")
-    } ).catch( function( err ) {
-      // TODO - Check for unauth
-      console.log("Could not create a new portfolio");
-      console.log( err );
-    } );
+      } ).then( function( body ) {
+        console.log(body);
+        console.log("A new portfolio was created")
+      } ).catch( function( err ) {
+        if(authorized(err, "Writer")){
+          console.log("Could not create a new portfolio");
+          console.log( err );
+        }
+      } );
+    }    
   } );
 
 }
@@ -155,13 +159,15 @@ function loadPortfolioHoldings(portfolio, holdingsJsonFile) {
   } ).then( function( body ) {
     console.log(body);
   } ).catch( function( err ) {
-    // TODO - Check for unauth
-    console.log( err );
+    if(authorized(err, "Writer")){
+      console.log( err );
+    }
   } );
 }
 
 /**
- *
+ * Deletes the portfolio with the supplied name.
+ * Throws an error if the portfolio does not already exist.
  */
 function deletePortfolio(portfolioName) {
   console.log('Attempting to delete ' + portfolioName);
@@ -200,14 +206,30 @@ function deletePortfolio(portfolioName) {
     } ).then( function( body ) {
       console.log( 'Portfolio deleted');    
     } ).catch( function( err ) {
-      // TODO - Check for unauth
-      console.log( 'Could not delete the portfolio');
-      return err;
+      if(authorized(err, "writer")){
+        console.log( 'Could not delete the portfolio');
+      }
+      return;
     } );
   } ).catch( function( err ) {
-   // TODO - Check for unauth
-   console.log( 'No portfolio named ' + portfolioName + ' exists');
+    if(authorized(err, "Reader")){
+      console.log( 'No portfolio named ' + portfolioName + ' exists');
+    }
   } );
+}
+
+/**
+ * Checks to see if an error message is caused by an authorization issue. 
+ * If it is an authorization issue, log a standard message.
+ */
+function authorized(error, type){
+  if(error.statusCode == 401){
+    console.log("Could not perform the operation because it is not authorized");
+    console.log("Please check your environment properties for the Investment Portfolio " + type);
+    return false;
+  } else {
+    return true;
+  }
 }
 
 /**
