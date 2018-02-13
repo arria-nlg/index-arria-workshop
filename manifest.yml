@@ -3,11 +3,11 @@ applications:
   memory: 128M
   instances: 1
   domain: mybluemix.net
-  name: index-arria-app
-  host: index-arria-app
+  name: TODO
+  host: TODO
   disk_quota: 128M
   buildpack: sdk-for-nodejs
   services:
-  - Investment-Portfolio
-  - Instrument-Analytics
-  - Arria-NLG-1
+  - Investment Portfolio-TODO
+  - Instrument Analytics-TODO
+  - Natural Language Generation APIs-TODO
