@@ -6,9 +6,6 @@ var vcapServices = require('vcap_services');
 var jsonfile = require( 'jsonfile' );
 var parser = require( 'body-parser' );
 
-
-
-
 // IBM Cloud
 var env = cfenv.getAppEnv();
 var config ={};
