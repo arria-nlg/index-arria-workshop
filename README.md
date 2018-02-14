@@ -2,18 +2,27 @@
 
 During this workshop users will learn how to assemble and deploy a web application using IBM Cloud APIs and Arria NLG Studio. You will build up an application that takes an investment portfolio and evaluates what the holdings are worth in the current market. This data is then used to produce a report using natural language generation.
 
-Building this application will show you how to:
+The workshop is broken into two halves:
 
-* Create financial APIs on IBM Cloud
-* Build and deploy NLG Studio applications that generate text
-* Load and retrieve data from the Investment Portfolio service
-* Analyse the portfolio's value using the Instrument Analytics service
-* Generate narratives from the portfolio data with your NLG Studio API
-* Chain these API calls together to make a node web app
-* Deploy the application on IBM Cloud 
+* Setting Up the Application
+* Expanding the Narrative
+
+The first part will show you how to host the various services that make up our application, and the second will show you how you can expand the narrative using NLG Studio.  
+
+Completing this workshop will show you how to:
+
+- Create financial APIs on IBM Cloud
+- Build and deploy NLG Studio applications that generate text
+- Load and retrieve data from the Investment Portfolio service
+- Analyse the portfolio's value using the Instrument Analytics service
+- Generate narratives from the portfolio data with your NLG Studio API
+- Chain these API calls together to make a node web app
+- Deploy the application on IBM Cloud 
 
 # The Application
-In this tutorial you will build a web application that looks like this:
+In this tutorial you will build a web application that reports on the value of people's investment portfolios. An investment portfolio is a collection of stocks, options, and other holdings in various companies. These companies are referred to as the issuers of each holding. When we describe these issuers we tend to do so by business sector, e.g. Health Care, IT, Transport etc. 
+
+The end application looks like this:
 
 *TODO - update with logo*
 <p align="center">
@@ -29,10 +38,10 @@ At the top of the screen you are able to select one of your investment portfolio
 The application is built around three main APIs:
 
 ## IBM Investment Portfolio
-The IBM Investment Portfolio stores information about a user's investment portfolios, including how many holdings they have and in which companies.
+The IBM Investment Portfolio stores information about a user's investment portfolios, including how many holdings they have and in which companies. This service is able to catalogue changes in the portfolio over time, but in this demo we're just going to use the most recent data.
 
 ## IBM Instrument Analytics
-An API which takes in portfolio information and uses IBM Algorithmics pricing models to judge how much each holding is theoretically worth. This API supports all major asset classes, including equity, fixed income, forwards & futures, options, interest rate products, credit derivatives, indexes and structured products. Our application will use this analytics to value the holdings in the current financial market.
+An API which takes in portfolio information and uses IBM Algorithmics pricing models to judge how much each holding is theoretically worth. This API supports all major asset classes, including equity, fixed income, forwards & futures, options, interest rate products, credit derivatives, indexes and structured products. Instrument Analytics can calculate a lot of different factors about holdings. Our application will use this analytics to value the holdings in the current financial market.
   
 ## Arria NLG Studio
 Arria NLG Studio is a web application allowing users to build and deploy natural language generation systems. Studio can be used to produce reports for any vertical and follows a methodology that makes it easy to get started and natural to build up report complexity. We will use Studio to build an API that can describe the value of a portfolio. 
@@ -43,7 +52,7 @@ Arria NLG Studio is a web application allowing users to build and deploy natural
 
 Be sure to [load investment portfolio](#5-load-investment-portfolio) before running the application. 
 -->
-# Workshop Code Along
+# Workshop A :  Setting Up the Application
 Follow these steps to setup and run this project. The steps are described in detail below.
 
 ## Prerequisite
@@ -75,31 +84,63 @@ Clone the `index-arria-workshop` locally. In a terminal, run:
 
 Before you get started, take a look at the end product we're going to put together. We have hosted the application at:
 
-*TODO - Hosted URL*
+https://demo-index-arria-app-wb.mybluemix.net/
 
 Try generating text for the different portfolios, and see how the narrative changes.
 
 ## 3. Generating Text with NLG Studio
 
-To generate the language in the application we use Arria NLG Studio. This web based development environment lets you write APIs that take in data and use it to produce narratives. We're going to load in the Studio project behind the application. Please note that NLG Studio is designed for Google Chrome.
+To generate the language in the application we use Arria NLG Studio. This web based development environment lets you write APIs that take in data and use it to produce narratives. We're going to load in the Studio project behind the application. 
 
-Firstly, log in to NLG Studio at <https://app.studio.arria.com>. If you haven't signed up yet, click the "Don't have an account button" and follow the instructions. Please note that the validation email can take a few minutes to come through.
+Please note that NLG Studio is designed for Google Chrome. We strongly recommend using Chrome when building Studio applications. 
 
-Rather than creating the whole project from scratch, we are going to import a pre-built Studio project. The file we are going to load is in the git repository at `studio/nlgStudioProject.json`. Click the import a project button, which is next to new project. 
+Firstly, log in to NLG Studio at <https://app.studio.arria.com>. If you haven't signed up yet, click the `Don't have an account` button and follow the instructions. Please note that the validation email can take a few minutes to come through.
+
+Rather than creating the whole project from scratch, we are going to import a pre-built Studio project. The file we are going to load is in the git repository at `studio/nlgStudioProject.json`. Click the `Import a Project` button, which is next to new project. 
 
 <p align="center">
   <img width="800"  src="readme_images/import.png">
 </p>
 
-Once you have imported the project, click on it to open it up. You are taken to the Data screen of your project. This screen shows the sample data available to your project. 
+<img width="81" align="left" src="readme_images/preview.png">
 
-To see how the system reacts using this data, try clicking the preview button on the left toolbar. 
+Once you have imported the project, click on it to open it up. 
 
-Preview generates a report using the sample data. The top of the window shows the data, and the bottom shows the text. You can change the sample data and the report will reflect it. Try changing the name of the protfolio (currently "Portfolio") to something else, and preview the report. The first sentence should use your new name.
+The purpose of NLG Studio is to build up an NLG application using scripts. This application can then be hosted on the Arria cloud, allowing you to post data to it and retrieve a corresponding narrative. 
 
-The text is composed through a series of scripts. Open the compose view to see the project's main script.  
+When you open up a project, you are taken to the Data screen. This screen shows sample data that you can use to test your application. To see how the system reacts using this data, try clicking the `Preview` button on the left toolbar. 
 
-TODO
+Preview generates a report using the sample data. The top of the window shows the data, and the bottom shows the text. You can change the sample data and the report will reflect it. Try changing the name of the protfolio (currently "Sample Portfolio") to something else, and preview the report. The first sentence should use your new name. 
+
+The text is composed using a series of scripts. Open the compose view using the button on the left toolbar. You should see the Main script for your project. Whenever a narrative is generated, this is what runs. The script is written in ATL, Arria's Articulate Text Language. We will explain what ATL is, and how to write it, in the second workshop.
+
+For now, all you need to know is that regular text in your script is included in your reports, while double square brackets are code snippets that will be calculated before being included. Try adding a title to your report and preview what it looks like. You can use the formatting buttons if you want to style the title.
+
+<p align="center">
+  <img width="800"  src="readme_images/formatting.png">
+</p>
+
+Now we need to deploy your Studio application on the cloud. To do that, just click the `Publish` button in the top right. When it shows the success screen, copy down the app's URL.ß
+
+<p align="center">
+  <img width="800"  src="readme_images/publish.png">
+</p>
+
+You project is now hosted at the URL in the dialogue window. If you forget the URL (or make changes to the project) you can publish at any time. This will update your existing URL.
+
+To access that URL, you will also need an API key for authentication. This key is generated in the `Settings` menu by selecting the `API` submenu, and then pressing `GENERATE API KEY`. 
+
+<p align="center">
+  <img width="800"  src="readme_images/api_key.png">
+</p>
+
+We will need your URL and API key throughout the workshop. 
+
+If you have a tool for hitting RESTful services like [Postman](https://www.getpostman.com/) or [cURL](https://curl.haxx.se/), you can try using the service. Your service is available through a `POST` request to your URL. You will need two headers:
+- `ContentType = application/json`
+- `Authorization = Bearer YOUR_API_KEY_HERE`
+
+We have several example data sets in the `studio/data` folder. The structure for the data can be seen in the `studio/data/dataWrapper.json` file. If you do not send any data, NLG Studio will use the sample data. 
 
 To read more about NLG Studio, you can follow our tutorial which is available [here](https://docs.studio.arria.com/getting-started/creating-a-json-project/ "NLG Studio JSON Tutorial").
 
@@ -256,7 +297,9 @@ To host our app, simply call
 bx cf push
 ```
 
-The console will include the URL that your app is hosted on. This will typically be `MANIFEST_HOST_VALUE.mybluemix.net`.
+The console will include the URL that your app is hosted on. This will typically be `MANIFEST_HOST_VALUE.mybluemix.net`. Try visiting the URL and see your app running on the cloud.
+
+# Workshop B : Expanding the Narrative
 
 # License
 
