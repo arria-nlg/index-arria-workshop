@@ -177,7 +177,7 @@ You have now got three services running on IBM Cloud. Next we are going to conne
 
 We have provided a basic node web app that strings together calls between the various services. To know how to connect to the services the app uses a `.env` file.
 
-Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command:
+Create a `.env` file in the root directory of your project repository by copying the sample `.env.example` file with the following command:
 
   ```none
   cp .env.example .env
@@ -185,7 +185,7 @@ Create a `.env` file in the root directory of your clone of the project reposito
 
   **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://git-for-windows.github.io/) or [Xcopy](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/xcopy.mspx?mfr=true)
 
-The `.env` file will look something like the following:
+The `.env` file will look like this:
 
   ```none  
   # Investment Portfolio
