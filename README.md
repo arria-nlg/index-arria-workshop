@@ -53,7 +53,7 @@ Arria NLG Studio is a web application allowing users to build and deploy natural
 Be sure to [load investment portfolio](#5-load-investment-portfolio) before running the application. 
 -->
 # Workshop A :  Setting Up the Application
-Follow these steps to setup and run this project. The steps are described in detail below.
+This workshop will show you how to set up a web application on the IBM Cloud that combines IMB Cloud Financial Services with an Arria NLG Studio project.
 
 ## Prerequisite
 - [node](https://nodejs.org/en/)
@@ -141,7 +141,7 @@ If you have a tool for hitting RESTful services like [Postman](https://www.getpo
 - `ContentType = application/json`
 - `Authorization = Bearer YOUR_API_KEY_HERE`
 
-We have several example data sets in the `studio/data` folder. The structure for the data can be seen in the `studio/data/dataWrapper.json` file. If you do not send any data, NLG Studio will use the sample data. 
+We have several example data sets in the `studio/api_data` folder. The structure for the data can be seen in the `studio/api_data/dataWrapper.json` file. If you do not send any data, NLG Studio will use the sample data. 
 
 To read more about NLG Studio, you can follow our tutorial which is available [here](https://docs.studio.arria.com/getting-started/creating-a-json-project/ "NLG Studio JSON Tutorial").
 
@@ -214,16 +214,16 @@ Pay particular attention to the Portfolio credentials. There are different crede
 
 You will now need to create a portfolio in your Investment Portfolio service and create holdings for that portfolio. The `holdings.sample.json` file provides you with sample holdings for a portfolio.  You can run the `investmentPortfolio.js` script to load portfolio and holdings.  The credentials are retrieved from `.env` file so ensure that your Investment Portfolio credentials are filled as per the [last step](#5-configure-env-file).
 
-To load a portfolio named `MyFixedIncomePortfolio`, first install dependencies and use the command-line with the script to create the portfolio:
+To load a portfolio named `MyCustomPortfolio`, first install dependencies and use the command-line with the script to create the portfolio:
 ```
 npm install
-node investmentPortfolio.js -l MyFixedIncomePortfolio
+node investmentPortfolio.js -l MyCustomPortfolio
 ```
 This command produces a blank investment portfolio.
 
 To populate this portfolio we are going to load holdings from `holdings.sample.json` into it, run:
 ```
-node investmentPortfolio.js -l MyFixedIncomePortfolio -h holdings.sample.json
+node investmentPortfolio.js -l MyCustomPortfolio -h holdings.sample.json
 ```
 
 You can view a list of all of your portfolios by running:
@@ -233,13 +233,13 @@ node investmentPortfolio.js -g
 
 To view the holdings within a portfolio run:
 ```
-node investmentPortfolio.js -g MyFixedIncomePortfolio
+node investmentPortfolio.js -g MyCustomPortfolio
 ```
 
 If you make a mistake and want to delete a portfolio, you can run:
 
 ```
-node investmentPortfolio.js -d MyFixedIncomePortfolio
+node investmentPortfolio.js -d MyCustomPortfolio
 ```
 
 ## 7. Run the Application Locally
@@ -301,6 +301,41 @@ bx cf push
 The console will include the URL that your app is hosted on. This will typically be `MANIFEST_HOST_VALUE.mybluemix.net`. Try visiting the URL and see your app running on the cloud.
 
 # Workshop B : Expanding the Narrative
+This workshop will take the application you built in Workshop A and give you the opportunity to expand the text with Arria's NLG Studio. This workshop is loosely structured, investigate anything you find interesting.
+
+## Prerequisite
+- [Workshop A](#Workshop A :  Setting Up the Application)
+
+## Steps
+1. [Get More Sample Data](#1-get-more-sample-data)
+2. [Learn NLG Studio](#2-learn-nlg-studio)
+3. [Expanding the Text](#3-expanding-the-text)
+4. [Pulling in More Services](#4-pulling-in-more-services)
+
+## 1. Get More Sample Data
+Currently you have one portfolio filled with sample data. However, we want to see how the system reacts in different situations. 
+
+In [Load Investment Portfolios](#6-load-investment-portfolios) you learnt how to add a portfolio to your collection. Each portfolio you add is stored in the Investment Portfolio service you set up on the IBM Cloud, which means any portfolios you create are accessible. We have provided *TODO* more sample data files:
+
+- TODO
+- TODO
+- TODO
+
+Try creating portfolios for these files and see how the report changes. Portfolios are loaded when the page first loads, so refresh the app in your browser to see your additions.
+
+You should notice that some of the samples, the ones with only a single issuer, don't produce a report. In this workshop you will write a script in NLG Studio for them.
+
+## 2. Learn NLG Studio
+We are going to write a script in NLG Studio to extend the text, so you will need to learn the basics of Studio. There are two options for getting started, and your choice depends on how ambitious you're feeling. 
+
+* If you want to get started quickly, we have put together a short primer on NLG Studio. This is in the form of a Studio project, and it explains the most common actions. The primer project is in the git repository as `studio/studioDevelopersPrimer.json`. Import this project into NLG Studio in the same way you imported the other project.
+* If you want a more in-depth guide to NLG Studio we have a full tutorial available on our documentation site at https://docs.studio.arria.com/getting-started/creating-a-json-project/. This tutorial will give you a step by step guide to building a new project.
+
+## 3. Expand the Text
+TODO
+
+## 4. Pulling in More Services
+TODO
 
 # License
 
