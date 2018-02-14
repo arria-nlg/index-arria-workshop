@@ -1,0 +1,299 @@
+{
+  "data": [
+    {
+      "id": "Primary",
+      "type": "json",
+      "jsonData": {
+        "portfolioName": "Example1",
+        "key": "Portfolio",
+        "values": [
+          {
+            "key": "Health Care",
+            "values": [
+              {
+                "key": "Amgen Inc",
+                "values": [
+                  {
+                    "asset": "Amgen Inc",
+                    "quantity": "10",
+                    "instrumentId": "CX_US031162BG42_USD",
+                    "companyName": "Amgen Inc",
+                    "sectorName": "Health Care",
+                    "assetName": "US Corporate",
+                    "unitValue": 106.2264,
+                    "positionValue": 1062.264
+                  }
+                ],
+                "groupValue": 1062.264,
+                "groupWeight": 0.0277012188649477
+              },
+              {
+                "key": "AMGEN INC",
+                "values": [
+                  {
+                    "asset": "Amgen Inc",
+                    "quantity": "30",
+                    "instrumentId": "CX_US031162BK53_USD",
+                    "companyName": "AMGEN INC",
+                    "sectorName": "Health Care",
+                    "assetName": "US Corporate",
+                    "unitValue": 109.9807,
+                    "positionValue": 3299.421
+                  }
+                ],
+                "groupValue": 3299.421,
+                "groupWeight": 0.08604074246007076
+              },
+              {
+                "key": "Envision Healthcare Corp",
+                "values": [
+                  {
+                    "asset": "Envision Healthcare Corp",
+                    "quantity": "50",
+                    "instrumentId": "CX_US03232PAD06_USD",
+                    "companyName": "Envision Healthcare Corp",
+                    "sectorName": "Health Care",
+                    "assetName": "US Corporate",
+                    "unitValue": 104.3281,
+                    "positionValue": 5216.405000000001
+                  }
+                ],
+                "groupValue": 5216.405000000001,
+                "groupWeight": 0.13603094578485908
+              },
+              {
+                "key": "Aetna Inc",
+                "values": [
+                  {
+                    "asset": "Aetna Inc",
+                    "quantity": "5",
+                    "instrumentId": "CX_US00817YAU29_USD",
+                    "companyName": "Aetna Inc",
+                    "sectorName": "Health Care",
+                    "assetName": "US Corporate",
+                    "unitValue": 101.32,
+                    "positionValue": 506.59999999999997
+                  },
+                  {
+                    "asset": "Aetna Inc",
+                    "quantity": "30",
+                    "instrumentId": "CX_US00817YAW84_USD",
+                    "companyName": "Aetna Inc",
+                    "sectorName": "Health Care",
+                    "assetName": "US Corporate",
+                    "unitValue": 101.4833,
+                    "positionValue": 3044.499
+                  }
+                ],
+                "groupValue": 3551.0989999999997,
+                "groupWeight": 0.0926038824718685
+              }
+            ],
+            "groupValue": 13129.189,
+            "groupWeight": 0.34237678958174605
+          },
+          {
+            "key": "Energy",
+            "values": [
+              {
+                "key": "Anadarko Petroleum Corp",
+                "values": [
+                  {
+                    "asset": "Anadarko Petroleum Corp",
+                    "quantity": "40",
+                    "instrumentId": "CX_US032511BM81_USD",
+                    "companyName": "Anadarko Petroleum Corp",
+                    "sectorName": "Energy",
+                    "assetName": "US Corporate",
+                    "unitValue": 109.3309,
+                    "positionValue": 4373.236
+                  }
+                ],
+                "groupValue": 4373.236,
+                "groupWeight": 0.11404318284726625
+              }
+            ],
+            "groupValue": 4373.236,
+            "groupWeight": 0.11404318284726625
+          },
+          {
+            "key": "Technology",
+            "values": [
+              {
+                "key": "Analog Devices Inc",
+                "values": [
+                  {
+                    "asset": "Analog Devices Inc",
+                    "quantity": "30",
+                    "instrumentId": "CX_US032654AN54_USD",
+                    "companyName": "Analog Devices Inc",
+                    "sectorName": "Technology",
+                    "assetName": "US Corporate",
+                    "unitValue": 100.1684,
+                    "positionValue": 3005.052
+                  }
+                ],
+                "groupValue": 3005.052,
+                "groupWeight": 0.07836432671402667
+              },
+              {
+                "key": "IBM",
+                "values": [
+                  {
+                    "asset": "International Business Machines Corp",
+                    "quantity": "10",
+                    "instrumentId": "CX_US4592001014_NYQ",
+                    "companyName": "IBM",
+                    "sectorName": "Technology",
+                    "assetName": "US Corporate",
+                    "unitValue": 179.82,
+                    "positionValue": 1798.1999999999998
+                  }
+                ],
+                "groupValue": 1798.1999999999998,
+                "groupWeight": 0.04689261027668165
+              },
+              {
+                "key": "Microsoft Corp",
+                "values": [
+                  {
+                    "asset": "Microsoft Corp",
+                    "quantity": "30",
+                    "instrumentId": "CX_US594918AQ78_USD",
+                    "companyName": "Microsoft Corp",
+                    "sectorName": "Technology",
+                    "assetName": "US Corporate",
+                    "unitValue": 98.3145,
+                    "positionValue": 2949.435
+                  }
+                ],
+                "groupValue": 2949.435,
+                "groupWeight": 0.07691397285697062
+              }
+            ],
+            "groupValue": 7752.687,
+            "groupWeight": 0.20217090984767894
+          },
+          {
+            "key": "Consumer Non-cyclical",
+            "values": [
+              {
+                "key": "Anheuser-Busch Inbev Finance Inc",
+                "values": [
+                  {
+                    "asset": "Anheuser-Busch Inbev Finance Inc",
+                    "quantity": "20",
+                    "instrumentId": "CX_US035242AJ52_USD",
+                    "companyName": "Anheuser-Busch Inbev Finance Inc",
+                    "sectorName": "Consumer Non-cyclical",
+                    "assetName": "US Corporate",
+                    "unitValue": 101.0953,
+                    "positionValue": 2021.906
+                  },
+                  {
+                    "asset": "Anheuser-Busch Inbev Finance Inc",
+                    "quantity": "10",
+                    "instrumentId": "CX_US035242AL09_USD",
+                    "companyName": "Anheuser-Busch Inbev Finance Inc",
+                    "sectorName": "Consumer Non-cyclical",
+                    "assetName": "US Corporate",
+                    "unitValue": 101.9585,
+                    "positionValue": 1019.585
+                  }
+                ],
+                "groupValue": 3041.491,
+                "groupWeight": 0.07931456574520897
+              }
+            ],
+            "groupValue": 3041.491,
+            "groupWeight": 0.07931456574520897
+          },
+          {
+            "key": "Finance Companies",
+            "values": [
+              {
+                "key": "Aercap Ireland Ltd",
+                "values": [
+                  {
+                    "asset": "Aercap Ireland Ltd",
+                    "quantity": "25",
+                    "instrumentId": "CX_US00772BAM37_USD",
+                    "companyName": "Aercap Ireland Ltd",
+                    "sectorName": "Finance Companies",
+                    "assetName": "US Corporate",
+                    "unitValue": 110.2361,
+                    "positionValue": 2755.9024999999997
+                  }
+                ],
+                "groupValue": 2755.9024999999997,
+                "groupWeight": 0.07186712373097133
+              }
+            ],
+            "groupValue": 2755.9024999999997,
+            "groupWeight": 0.07186712373097133
+          },
+          {
+            "key": "Communications",
+            "values": [
+              {
+                "key": "Frontier Communications Corp",
+                "values": [
+                  {
+                    "asset": "Frontier Communications Corp",
+                    "quantity": "40",
+                    "instrumentId": "CX_US35906AAL26_USD",
+                    "companyName": "Frontier Communications Corp",
+                    "sectorName": "Communications",
+                    "assetName": "US Corporate",
+                    "unitValue": 106.2743,
+                    "positionValue": 4250.972
+                  },
+                  {
+                    "asset": "Frontier Communications Corp",
+                    "quantity": "10",
+                    "instrumentId": "CX_US35906AAN81_USD",
+                    "companyName": "Frontier Communications Corp",
+                    "sectorName": "Communications",
+                    "assetName": "US Corporate",
+                    "unitValue": 91.601,
+                    "positionValue": 916.01
+                  }
+                ],
+                "groupValue": 5166.982,
+                "groupWeight": 0.13474211613426154
+              }
+            ],
+            "groupValue": 5166.982,
+            "groupWeight": 0.13474211613426154
+          },
+          {
+            "key": "Transportation",
+            "values": [
+              {
+                "key": "Fedex Corp",
+                "values": [
+                  {
+                    "asset": "Fedex Corp",
+                    "quantity": "20",
+                    "instrumentId": "CX_US31428XAY22_USD",
+                    "companyName": "Fedex Corp",
+                    "sectorName": "Transportation",
+                    "assetName": "US Corporate",
+                    "unitValue": 106.3853,
+                    "positionValue": 2127.706
+                  }
+                ],
+                "groupValue": 2127.706,
+                "groupWeight": 0.05548531211286688
+              }
+            ],
+            "groupValue": 2127.706,
+            "groupWeight": 0.05548531211286688
+          }
+        ],
+        "groupValue": 38347.1934,
+        "groupWeight": 1
+      }
+    }
+  ]
+}
