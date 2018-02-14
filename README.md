@@ -77,6 +77,7 @@ Follow these steps to setup and run this project. The steps are described in det
 
 Clone the `index-arria-workshop` locally. In a terminal, run:
 *TODO - location*
+
   `$ git clone https://github.com/XXXX/index-arria-workshop.git`
 
 
@@ -94,7 +95,7 @@ To generate the language in the application we use Arria NLG Studio. This web ba
 
 Please note that NLG Studio is designed for Google Chrome. We strongly recommend using Chrome when building Studio applications. 
 
-Firstly, log in to NLG Studio at <https://app.studio.arria.com>. If you haven't signed up yet, click the `Don't have an account` button and follow the instructions. Please note that the validation email can take a few minutes to come through.
+Firstly, log in to NLG Studio at <https://app.studio.arria.com>. If you haven't signed up yet, click the `Don't have an account` button and follow the instructions. The validation email can take a few minutes to come through.
 
 Rather than creating the whole project from scratch, we are going to import a pre-built Studio project. The file we are going to load is in the git repository at `studio/nlgStudioProject.json`. Click the `Import a Project` button, which is next to new project. 
 
@@ -112,15 +113,15 @@ When you open up a project, you are taken to the Data screen. This screen shows 
 
 Preview generates a report using the sample data. The top of the window shows the data, and the bottom shows the text. You can change the sample data and the report will reflect it. Try changing the name of the protfolio (currently "Sample Portfolio") to something else, and preview the report. The first sentence should use your new name. 
 
-The text is composed using a series of scripts. Open the compose view using the button on the left toolbar. You should see the Main script for your project. Whenever a narrative is generated, this is what runs. The script is written in ATL, Arria's Articulate Text Language. We will explain what ATL is, and how to write it, in the second workshop.
+The text is composed using a series of scripts. Open the `Compose` view using the button on the left toolbar. You should see the `Main` script for your project. Whenever a narrative is generated, this is what runs. The script is written in ATL, Arria's Articulate Text Language. We will explain what ATL is, and how to write it, in the second workshop.
 
-For now, all you need to know is that regular text in your script is included in your reports, while double square brackets are code snippets that will be calculated before being included. Try adding a title to your report and preview what it looks like. You can use the formatting buttons if you want to style the title.
+For now, all you need to know is that regular text in your script is included in your reports, while text enclosed with double square brackets will be calculated before being included. Try adding a title to your report and preview what it looks like. You can use the formatting button if you want to style the title.
 
 <p align="center">
   <img width="800"  src="readme_images/formatting.png">
 </p>
 
-Now we need to deploy your Studio application on the cloud. To do that, just click the `Publish` button in the top right. When it shows the success screen, copy down the app's URL.ß
+Now we need to deploy your Studio application on the cloud. To do that, just click the `Publish` button in the top right. When it shows the success screen, copy down the app's URL.
 
 <p align="center">
   <img width="800"  src="readme_images/publish.png">
@@ -174,7 +175,7 @@ You have now got three services running on IBM Cloud. Next we are going to conne
 
 ## 5. Configure .env file
 
-We have provided a basic node web app that strings together calls between the various services. To know which services to connect, the app uses a `.env` file.
+We have provided a basic node web app that strings together calls between the various services. To know how to connect to the services the app uses a `.env` file.
 
 Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command:
 
