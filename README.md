@@ -100,7 +100,7 @@ Firstly, log in to NLG Studio at <https://app.studio.arria.com>. If you haven't 
 Rather than creating the whole project from scratch, we are going to import a pre-built Studio project. The file we are going to load is in the git repository at `studio/nlgStudioProject.json`. Click the `Import a Project` button, which is next to new project. 
 
 <p align="center">
-  <img width="800"  src="readme_images/import.png">
+  <img width="800"  src="readme_images/import_project.png">
 </p>
 
 <img width="81" align="left" src="readme_images/preview.png">
@@ -115,7 +115,9 @@ Preview generates a report using the sample data. The top of the window shows th
 
 The text is composed using a series of scripts. Open the `Compose` view using the button on the left toolbar. You should see the `Main` script for your project. Whenever a narrative is generated, this is what runs. The script is written in ATL, Arria's Articulate Text Language. We will explain what ATL is, and how to write it, in the second workshop.
 
-For now, all you need to know is that regular text in your script is included in your reports, while text enclosed with double square brackets will be calculated before being included. Try adding a title to your report and preview what it looks like. You can use the formatting button if you want to style the title.
+For now, all you need to know is that regular text in your script is included in your reports, while text enclosed with double square brackets will be calculated before being included. For example, the text as the bottom saying "Please note that all values are theoretical, actual market valuation may differ slightly." will appear as is. The if statement is in square brackets, so it will be evaluated and it will use a different description depnding on the number of issuers and sectors. 
+
+Try adding a title to your report and preview what it looks like. You can use the formatting button if you want to style the title.
 
 <p align="center">
   <img width="800"  src="readme_images/formatting.png">
@@ -143,7 +145,7 @@ If you have a tool for hitting RESTful services like [Postman](https://www.getpo
 
 We have several example data sets in the `studio/api_data` folder. The structure for the data can be seen in the `studio/api_data/dataWrapper.json` file. If you do not send any data, NLG Studio will use the sample data. 
 
-To read more about NLG Studio, you can follow our tutorial which is available [here](https://docs.studio.arria.com/getting-started/creating-a-json-project/ "NLG Studio JSON Tutorial").
+In Workshop B we are going to learn more about how to program in NLG Studio.
 
 ## 4. Create IBM Cloud Services
 
@@ -304,13 +306,12 @@ The console will include the URL that your app is hosted on. This will typically
 This workshop will take the application you built in Workshop A and give you the opportunity to expand the text with Arria's NLG Studio. This workshop is loosely structured, investigate anything you find interesting.
 
 ## Prerequisite
-- [Workshop A](#Workshop A :  Setting Up the Application)
+- [Workshop A](#workshop-a---setting-up-the-application)
 
 ## Steps
 1. [Get More Sample Data](#1-get-more-sample-data)
 2. [Learn NLG Studio](#2-learn-nlg-studio)
 3. [Expanding the Text](#3-expanding-the-text)
-4. [Pulling in More Services](#4-pulling-in-more-services)
 
 ## 1. Get More Sample Data
 Currently you have one portfolio filled with sample data. However, we want to see how the system reacts in different situations. 
@@ -332,10 +333,46 @@ We are going to write a script in NLG Studio to extend the text, so you will nee
 * If you want a more in-depth guide to NLG Studio we have a full tutorial available on our documentation site at https://docs.studio.arria.com/getting-started/creating-a-json-project/. This tutorial will give you a step by step guide to building a new project.
 
 ## 3. Expand the Text
-TODO
+The report you downloaded is able to talk about the investment portfolio in most situations, unless there's only a single issuer. If all of your equity is in one company, the report will just print a line of canned text. You are going to expand this into a longer narrative. This is going to involve writing as well as coding. If you're ever stuck for ideas, you can try the https://demo-index-arria-app-wb.mybluemix.net/ demo to see how we phrased things.
 
-## 4. Pulling in More Services
-TODO
+First, an introduction in how the project is set up. A Studio project starts with a `Main` script, which can call out to various sub-scripts. In our Portfolio Holdings Summary project our `Main` script chooses what type of portfolio we are dealing with, then prints a canned text sentence. There are four types of report: NoIssuers, OneIssuer, ManyIssuersOneSector and ManyIssuersManySectors. It is the OneIssuer script we need to improve.
+
+For us to test this, we're going to need some sample data. In the `studio/previewData` folder we have six sets of sample data:
+- `SampleDataSet1` - The default portfolio with a number of different issuers across various sectors
+- `SampleDataSet2` - An empty portfolio
+- `SampleDataSet3` - A portfolio where all of the issuers are in the Technology sector
+- `SingleIssuerSampleDataset1` - A portfolio with two separate holdings in a single issuer
+- `SingleIssuerSampleDataset2` - A portfolio with a single holding in a single issuer
+- `SingleIssuerSampleDataset3` - A portfolio with two separate holdings in a single issuer, where the vast majority of the holdings are in one of the holdings  
+
+To load a sample dataset into Studio, visit the `Data` view and press the import data button.
+ 
+<p align="center">
+  <img width="800"  src="readme_images/import_data.png">
+</p>
+
+Load in one of the SingleIssuer sample datasets so we can see what we are working with. If you preview it you'll get the "You will fill in this template during the second part of the workshop" boilerplate text.
+
+The project has already defined a few global variables which point to useful parts of the data. The two that will be most useful for you are ` [[PortfolioName]] ` and ` [[SortedIssuers]] `, or more specifically ` [[SortedIssuers[0]]] `. If you copy these into your script and preview it, you can see the data you have to hand.
+
+Let's start with a basic sentence naming the portfolio and claiming that there is only a single issuer.
+
+Next you could add the information that we'll always need:
+- Who is the issuer?
+- How many holdings are there? (i.e. the length of the issuer's values)
+- What sector is the issuer in? (there are two ways of getting this, either from the first holding, or from the SortedSectors variable)
+
+After that it would be good to read about the different holdings. There is a subscript called Position that takes a position in a holding (i.e. one of the issuer's values) that may come in handy.
+  
+It would make sense to describe the positions differently depending on how many holdings there are. Describing one holding is different to describing a portfolio made up of several holdings. You can use an if condition to choose from different options.
+
+If you're describing multiple holdings, it would make sense to read them in value order. Try using the ` sort ` function. 
+
+What happens if there are a lot of different holdings? You could try limiting the number of holdings using the ` top ` function.
+
+What do you do if one of the holdings makes up the majority of the portfolio? In `SingleIssuerSampleDataset3` there are 5 units in one instrument, but 300 in the other.
+
+The final thing to suggest is variation. You can use the ` chooseAtRandom ` function to make the report vary every time it is generated. If you want to vary something more complex, like a section of text including variables, it's usually easiest to put the choices in separate subscripts, and use ` chooseAtRandom ` to decide which to use. 
 
 # License
 

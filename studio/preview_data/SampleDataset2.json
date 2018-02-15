@@ -1,17 +1,9 @@
 {
-  "data": [
-    {
-      "id": "Primary",
-      "type": "json",
-      "jsonData": {
-        "portfolioName": "Empty",
-        "key": "Portfolio",
-        "values": [
+  "portfolioName": "Empty",
+  "key": "Portfolio",
+  "values": [
 
-        ],
-        "groupValue": 0,
-        "groupWeight": 1
-      }
-    }
-  ]
+  ],
+  "groupValue": 0,
+  "groupWeight": 1
 }

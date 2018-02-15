@@ -1,0 +1,32 @@
+{
+  "portfolioName": "Example1",
+  "key": "Portfolio",
+  "values": [
+    {
+      "key": "Technology",
+      "values": [
+        {
+          "key": "IBM",
+          "values": [
+            {
+              "asset": "International Business Machines Corp",
+              "quantity": "10",
+              "instrumentId": "CX_US4592001014_NYQ",
+              "companyName": "IBM",
+              "sectorName": "Technology",
+              "assetName": "US Corporate",
+              "unitValue": 179.82,
+              "positionValue": 1798.1999999999998
+            }
+          ],
+          "groupValue": 1798.1999999999998,
+          "groupWeight": 1
+        }
+      ],
+      "groupValue": 1798.1999999999998,
+      "groupWeight": 1
+    }
+  ],
+  "groupValue": 1798.1999999999998,
+  "groupWeight": 1
+}

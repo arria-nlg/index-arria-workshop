@@ -1,0 +1,42 @@
+{
+  "portfolioName": "Single Issuer",
+  "key": "Portfolio",
+  "values": [
+    {
+      "key": "Communications",
+      "values": [
+        {
+          "key": "Frontier Communications Corp",
+          "values": [
+            {
+              "asset": "Frontier Communications Corp",
+              "quantity": "40",
+              "instrumentId": "CX_US35906AAL26_USD",
+              "companyName": "Frontier Communications Corp",
+              "sectorName": "Communications",
+              "assetName": "US Corporate",
+              "unitValue": 106.2743,
+              "positionValue": 4250.972
+            },
+            {
+              "asset": "Frontier Communications Corp",
+              "quantity": "30",
+              "instrumentId": "CX_US35906AAN81_USD",
+              "companyName": "Frontier Communications Corp",
+              "sectorName": "Communications",
+              "assetName": "US Corporate",
+              "unitValue": 91.601,
+              "positionValue": 2748.03
+            }
+          ],
+          "groupValue": 6999.002,
+          "groupWeight": 1
+        }
+      ],
+      "groupValue": 6999.002,
+      "groupWeight": 1
+    }
+  ],
+  "groupValue": 6999.002,
+  "groupWeight": 1
+}

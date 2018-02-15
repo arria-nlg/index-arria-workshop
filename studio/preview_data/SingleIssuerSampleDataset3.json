@@ -1,0 +1,42 @@
+{
+  "portfolioName": "Example1",
+  "key": "Portfolio",
+  "values": [
+    {
+      "key": "Health Care",
+      "values": [
+        {
+          "key": "Aetna Inc",
+          "values": [
+            {
+              "asset": "Aetna Inc",
+              "quantity": "5",
+              "instrumentId": "CX_US00817YAU29_USD",
+              "companyName": "Aetna Inc",
+              "sectorName": "Health Care",
+              "assetName": "US Corporate",
+              "unitValue": 101.32,
+              "positionValue": 506.6
+            },
+            {
+              "asset": "Aetna Inc",
+              "quantity": "300",
+              "instrumentId": "CX_US00817YAW84_USD",
+              "companyName": "Aetna Inc",
+              "sectorName": "Health Care",
+              "assetName": "US Corporate",
+              "unitValue": 101.4833,
+              "positionValue": 30444.99
+            }
+          ],
+          "groupValue": 30951.59,
+          "groupWeight": 1
+        }
+      ],
+      "groupValue": 30951.59,
+      "groupWeight": 1
+    }
+  ],
+  "groupValue": 30951.59,
+  "groupWeight": 1
+}
