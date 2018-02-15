@@ -357,6 +357,8 @@ The project has already defined a few global variables which point to useful par
 
 Let's start with a basic sentence naming the portfolio and claiming that there is only a single issuer.
 
+Once you've added a sentence and previewed it, you can re-publish it. As soon as it's republished, anyone using the demo you have hosted on the IBM Cloud will see the latest version of the text.
+
 Next you could add the information that we'll always need:
 - Who is the issuer?
 - How many holdings are there? (i.e. the length of the issuer's values)
