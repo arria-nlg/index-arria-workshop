@@ -53,7 +53,7 @@ Arria NLG Studio is a web application allowing users to build and deploy natural
 Be sure to [load investment portfolio](#5-load-investment-portfolio) before running the application. 
 -->
 # Workshop A :  Setting Up the Application
-This workshop will show you how to set up a web application on the IBM Cloud that combines IMB Cloud Financial Services with an Arria NLG Studio project.
+This workshop will show you how to set up a web application on the IBM Cloud that combines IBM Cloud Financial Services with an Arria NLG Studio project.
 
 ## Prerequisite
 - [node](https://nodejs.org/en/)
