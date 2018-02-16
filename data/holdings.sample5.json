@@ -1,0 +1,86 @@
+{
+    "timestamp": "2018-02-15T18:52:52.000Z",
+    "holdings": [
+        {
+            "instrumentId": "CX_US0231351067_NSQ",
+            "quantity": "48",
+            "asset": "Amazon.com, Inc.",
+            "ticker": "AMZN",
+            "companyName": "Amazon.com, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US023135AN60_USD",
+            "quantity": "15",
+            "asset": "Amazon.com, Inc.",
+            "ticker": "AMZN 3.8 12/05/24",
+            "companyName": "Amazon.com, Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US023135AP19_USD",
+            "quantity": "44",
+            "asset": "Amazon.com, Inc.",
+            "ticker": "AMZN 4.8 12/05/34",
+            "companyName": "Amazon.com, Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US37045V1008_NYQ",
+            "quantity": "35",
+            "asset": "General Motors",
+            "ticker": "GM",
+            "companyName": "General Motors Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US37045XBT28_USD",
+            "quantity": "38",
+            "asset": "General Motors",
+            "ticker": "GM 4.35 01/17/27",
+            "companyName": "General Motors Company",
+            "assetName": "Corporate",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US0936711052_NYQ",
+            "quantity": "30",
+            "asset": "H&R Block Inc",
+            "ticker": "HRB",
+            "companyName": "H & R Block, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US55616P1049_NYQ",
+            "quantity": "28",
+            "asset": "Macys Inc",
+            "ticker": "M",
+            "companyName": "Macy'S, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US64110L1061_NSM",
+            "quantity": "49",
+            "asset": "Netflix Inc",
+            "ticker": "NFLX",
+            "companyName": "Netflix, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US64110LAE65_USD",
+            "quantity": "20",
+            "asset": "Netflix Inc",
+            "ticker": "NFLX 5.375 02/01/21",
+            "companyName": "Netflix, Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Consumer Discretionary"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2017-06-07T19:53:56.830Z",
+  "holdings": [
+    {
+      "asset": "Frontier Communications Corp",
+      "quantity": "400",
+      "instrumentId": "CX_US35906AAL26_USD",
+      "companyName": "Frontier Communications Corp",
+      "sectorName": "Communications",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Frontier Communications Corp",
+      "quantity": "100",
+      "instrumentId": "CX_US35906AAN81_USD",
+      "companyName": "Frontier Communications Corp",
+      "sectorName": "Communications",
+      "assetName": "US Corporate"
+    }
+  ]
+}

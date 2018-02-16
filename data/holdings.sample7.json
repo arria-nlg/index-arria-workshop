@@ -1,0 +1,14 @@
+{
+    "timestamp": "2018-02-15T18:43:44.000Z",
+    "holdings": [
+        {
+            "instrumentId": "CX_US92343V1044_NYQ",
+            "quantity": "16",
+            "asset": "Verizon Communications Inc",
+            "ticker": "VZ",
+            "companyName": "Verizon Communications Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Telecommunications"
+        }
+    ]
+}

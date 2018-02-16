@@ -1,0 +1,419 @@
+{
+    "timestamp": "2018-02-15T18:43:44.000Z",
+    "holdings": [
+        {
+            "instrumentId": "CX_US88579Y1010_NYQ",
+            "quantity": "42",
+            "asset": "3M Co",
+            "ticker": "MMM",
+            "companyName": "3M Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Industrials"
+        },
+        {
+            "instrumentId": "CX_US0010551028_NYQ",
+            "quantity": "16",
+            "asset": "Aflac Inc",
+            "ticker": "AFL",
+            "companyName": "Aflac Incorporated",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US00971T1016_NSQ",
+            "quantity": "14",
+            "asset": "Akamai Technologies Inc",
+            "ticker": "AKAM",
+            "companyName": "Akamai Technologies, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        },
+        {
+            "instrumentId": "CX_US02079K3059_NSQ",
+            "quantity": "42",
+            "asset": "Alphabet Inc Class A",
+            "ticker": "GOOGL",
+            "companyName": "Alphabet Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        },
+        {
+            "instrumentId": "CX_US0231351067_NSQ",
+            "quantity": "31",
+            "asset": "Amazon com Inc",
+            "ticker": "AMZN",
+            "companyName": "Amazon.com, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US0258161092_NYQ",
+            "quantity": "22",
+            "asset": "American Express",
+            "ticker": "AXP",
+            "companyName": "American Express Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US0378331005_NSQ",
+            "quantity": "37",
+            "asset": "Apple Inc",
+            "ticker": "AAPL",
+            "companyName": "Apple Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        },
+        {
+            "instrumentId": "CX_US00206R1023_NYQ",
+            "quantity": "38",
+            "asset": "AT&T Inc",
+            "ticker": "T",
+            "companyName": "AT&T Inc",
+            "assetName": "Ordinary shares",
+            "sectorName": "Telecommunications"
+        },
+        {
+            "instrumentId": "CX_US0605051046_NYS",
+            "quantity": "11",
+            "asset": "Bank Of America Corp",
+            "ticker": "BAC",
+            "companyName": "Bank Of America Corporation",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US09247X1019_NYQ",
+            "quantity": "19",
+            "asset": "Blackrock Inc.",
+            "ticker": "BLK",
+            "companyName": "Blackrock, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US1729674242_NYQ",
+            "quantity": "18",
+            "asset": "Citigroup Inc",
+            "ticker": "C",
+            "companyName": "Citigroup Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US1912161007_NYQ",
+            "quantity": "23",
+            "asset": "Coca-Cola",
+            "ticker": "KO",
+            "companyName": "The Coca-Cola Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Staples"
+        },
+        {
+            "instrumentId": "CX_US2605431038_NYQ",
+            "quantity": "45",
+            "asset": "Dow Chemical",
+            "ticker": "DOW",
+            "companyName": "The Dow Chemical Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Materials"
+        },
+        {
+            "instrumentId": "CX_US26138E1091_NYQ",
+            "quantity": "38",
+            "asset": "Dr Pepper Snapple Group Inc",
+            "ticker": "DPS",
+            "companyName": "Dr Pepper Snapple Group, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Staples"
+        },
+        {
+            "instrumentId": "CX_US2692464017_NSQ",
+            "quantity": "26",
+            "asset": "E*Trade Financial Corp.",
+            "ticker": "ETFC",
+            "companyName": "E*Trade Financial Corporation",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US2786421030_NSQ",
+            "quantity": "37",
+            "asset": "Ebay Inc",
+            "ticker": "EBAY",
+            "companyName": "Ebay Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        },
+        {
+            "instrumentId": "CX_US35906A1088_NSQ",
+            "quantity": "21",
+            "asset": "Frontier Communications Corp",
+            "ticker": "FTR",
+            "companyName": "Frontier Communications Corporation",
+            "assetName": "Ordinary shares",
+            "sectorName": "Telecommunications"
+        },
+        {
+            "instrumentId": "CX_US3696041033_NYQ",
+            "quantity": "48",
+            "asset": "General Electric",
+            "ticker": "GE",
+            "companyName": "General Electric Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Industrials"
+        },
+        {
+            "instrumentId": "CX_US37045V1008_NYQ",
+            "quantity": "41",
+            "asset": "General Motors",
+            "ticker": "GM",
+            "companyName": "General Motors Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US0936711052_NYQ",
+            "quantity": "39",
+            "asset": "H&R Block Inc",
+            "ticker": "HRB",
+            "companyName": "H & R Block, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US4278661081_NYQ",
+            "quantity": "19",
+            "asset": "Hershey Foods",
+            "ticker": "HSY",
+            "companyName": "The Hershey Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Staples"
+        },
+        {
+            "instrumentId": "CX_US4385161066_NYQ",
+            "quantity": "37",
+            "asset": "Honeywell International Inc",
+            "ticker": "HON",
+            "companyName": "Honeywell International Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Industrials"
+        },
+        {
+            "instrumentId": "CX_US4523271090_NSQ",
+            "quantity": "33",
+            "asset": "Illumina Inc",
+            "ticker": "ILMN",
+            "companyName": "Illumina, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Health Care"
+        },
+        {
+            "instrumentId": "CX_US4581401001_NSQ",
+            "quantity": "24",
+            "asset": "Intel Corporation Corp",
+            "ticker": "INTC",
+            "companyName": "Intel Corporation",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        },
+        {
+            "instrumentId": "CX_US4601461035_NYQ",
+            "quantity": "23",
+            "asset": "International Paper",
+            "ticker": "INP",
+            "companyName": "International Paper Company",
+            "assetName": "Ordinary shares",
+            "sectorName": "Materials"
+        },
+        {
+            "instrumentId": "CX_US46284V1017_NYQ",
+            "quantity": "36",
+            "asset": "Iron Mountain Inc",
+            "ticker": "IRM",
+            "companyName": "Iron Mountain Incorporated",
+            "assetName": "Ordinary shares",
+            "sectorName": "Real Estate"
+        },
+        {
+            "instrumentId": "CX_US4781601046_NYQ",
+            "quantity": "37",
+            "asset": "Johnson & Johnson",
+            "ticker": "JNJ",
+            "companyName": "Johnson & Johnson",
+            "assetName": "Ordinary shares",
+            "sectorName": "Health Care"
+        },
+        {
+            "instrumentId": "CX_US4932671088_NYQ",
+            "quantity": "10",
+            "asset": "Keycorp",
+            "ticker": "KEY",
+            "companyName": "Keycorp",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US55616P1049_NYQ",
+            "quantity": "31",
+            "asset": "Macys Inc",
+            "ticker": "M",
+            "companyName": "Macy'S, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US5717481023_NYQ",
+            "quantity": "46",
+            "asset": "Marsh & Mclennan Inc",
+            "ticker": "MMC",
+            "companyName": "Marsh & Mclennan Companies, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US59522J1034_NYQ",
+            "quantity": "21",
+            "asset": "Mid-America Apartment Communities",
+            "ticker": "MAA",
+            "companyName": "Mid-America Apartment Communities, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Real Estate"
+        },
+        {
+            "instrumentId": "CX_US61174X1090_NSQ",
+            "quantity": "11",
+            "asset": "Monster Beverage Corp",
+            "ticker": "MNST",
+            "companyName": "Monster Beverage Corporation",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Staples"
+        },
+        {
+            "instrumentId": "CX_US64110L1061_NSM",
+            "quantity": "36",
+            "asset": "Netflix Inc",
+            "ticker": "NFLX",
+            "companyName": "Netflix, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_GB00BWFY5505_NYQ",
+            "quantity": "33",
+            "asset": "Nielsen Holdings Plc",
+            "ticker": "NLSN",
+            "companyName": "Nielsen Holdings Plc",
+            "assetName": "Ordinary shares",
+            "sectorName": "Industrials"
+        },
+        {
+            "instrumentId": "CX_US6668071029_NYQ",
+            "quantity": "44",
+            "asset": "Northrop Grumman Corp",
+            "ticker": "NOC",
+            "companyName": "Northrop Grumman Corporation",
+            "assetName": "Ordinary shares",
+            "sectorName": "Industrials"
+        },
+        {
+            "instrumentId": "CX_US70450Y1038_NSQ",
+            "quantity": "24",
+            "asset": "Paypal Holdings Inc",
+            "ticker": "PYPL",
+            "companyName": "Paypal Holdings, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        },
+        {
+            "instrumentId": "CX_US7170811035_NYQ",
+            "quantity": "28",
+            "asset": "Pfizer Inc",
+            "ticker": "PFE",
+            "companyName": "Pfizer Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Health Care"
+        },
+        {
+            "instrumentId": "CX_US7565771026_NYQ",
+            "quantity": "26",
+            "asset": "Red Hat Inc",
+            "ticker": "RHT",
+            "companyName": "Red Hat, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        },
+        {
+            "instrumentId": "CX_US78409V1044_NYQ",
+            "quantity": "44",
+            "asset": "S&P Global Inc",
+            "ticker": "SPGI",
+            "companyName": "S&P Global Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_AN8068571086_NYQ",
+            "quantity": "24",
+            "asset": "Schlumberger Nv",
+            "ticker": "SLB",
+            "companyName": "Schlumberger N.V.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Energy"
+        },
+        {
+            "instrumentId": "CX_US9139031002_NYQ",
+            "quantity": "24",
+            "asset": "Universal Health Services Inc Clas",
+            "ticker": "UHS",
+            "companyName": "Universal Health Services, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Health Care"
+        },
+        {
+            "instrumentId": "CX_US92276F1003_NYQ",
+            "quantity": "19",
+            "asset": "Ventas Reit Inc",
+            "ticker": "VTR",
+            "companyName": "Ventas, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Real Estate"
+        },
+        {
+            "instrumentId": "CX_US92343V1044_NYQ",
+            "quantity": "16",
+            "asset": "Verizon Communications Inc",
+            "ticker": "VZ",
+            "companyName": "Verizon Communications Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Telecommunications"
+        },
+        {
+            "instrumentId": "CX_US9290421091_NYQ",
+            "quantity": "15",
+            "asset": "Vornado Realty Trust Reit Trust",
+            "ticker": "VNO",
+            "companyName": "Vornado Realty Trust",
+            "assetName": "Ordinary shares",
+            "sectorName": "Real Estate"
+        },
+        {
+            "instrumentId": "CX_US92939U1060_NYQ",
+            "quantity": "20",
+            "asset": "Wec Energy Group Inc",
+            "ticker": "WEC",
+            "companyName": "Wec Energy Group, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Utilities"
+        },
+        {
+            "instrumentId": "CX_US4592001014_NYQ",
+            "quantity": "15",
+            "asset": "International Business Machines Co",
+            "ticker": "IBM",
+            "companyName": "International Business Machines Corporation",
+            "assetName": "Ordinary shares",
+            "sectorName": "Information Technology"
+        }
+    ]
+}

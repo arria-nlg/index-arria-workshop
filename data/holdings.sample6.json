@@ -1,0 +1,95 @@
+{
+    "timestamp": "2018-02-15T18:49:58.000Z",
+    "holdings": [
+        {
+            "instrumentId": "CX_US0231351067_NSQ",
+            "quantity": "32",
+            "asset": "Amazon.com, Inc.",
+            "ticker": "AMZN",
+            "companyName": "Amazon.com, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US023135AN60_USD",
+            "quantity": "25",
+            "asset": "Amazon.com, Inc.",
+            "ticker": "AMZN 3.8 12/05/24",
+            "companyName": "Amazon.com, Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US023135AP19_USD",
+            "quantity": "30",
+            "asset": "Amazon.com, Inc.",
+            "ticker": "AMZN 4.8 12/05/34",
+            "companyName": "Amazon.com, Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Consumer Discretionary"
+        },        
+        {
+            "instrumentId": "CX_US64110LAE65_USD",
+            "quantity": "15",
+            "asset": "Netflix Inc",
+            "ticker": "NFLX 5.375 02/01/21",
+            "companyName": "Netflix, Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Consumer Discretionary"
+        },
+        {
+            "instrumentId": "CX_US26138E1091_NYQ",
+            "quantity": "11",
+            "asset": "Dr Pepper Snapple Group Inc",
+            "ticker": "DPS",
+            "companyName": "Dr Pepper Snapple Group, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Consumer Staples"
+        },
+        {
+            "instrumentId": "CX_US06051GFG91_USD",
+            "quantity": "27",
+            "asset": "Bank Of America Corp",
+            "ticker": "BAC 4.875 04/01/44 MTN",
+            "companyName": "Bank Of America Corporation",
+            "assetName": "",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US09247X1019_NYQ",
+            "quantity": "29",
+            "asset": "Blackrock Inc.",
+            "ticker": "BLK",
+            "companyName": "Blackrock, Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Financials"
+        },
+        {
+            "instrumentId": "CX_US7170811035_NYQ",
+            "quantity": "39",
+            "asset": "Pfizer Inc",
+            "ticker": "PFE",
+            "companyName": "Pfizer Inc.",
+            "assetName": "Ordinary shares",
+            "sectorName": "Health Care"
+        },
+        {
+            "instrumentId": "CX_US717081DH33_USD",
+            "quantity": "43",
+            "asset": "Pfizer Inc",
+            "ticker": "PFE 3 06/15/23",
+            "companyName": "Pfizer Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Health Care"
+        },
+        {
+            "instrumentId": "CX_US717081DM28_USD",
+            "quantity": "14",
+            "asset": "Pfizer Inc",
+            "ticker": "PFE 3 06/15/23",
+            "companyName": "Pfizer Inc.",
+            "assetName": "Corporate",
+            "sectorName": "Health Care"
+        }
+    ]
+}

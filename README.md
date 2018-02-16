@@ -214,7 +214,7 @@ Pay particular attention to the Portfolio credentials. There are different crede
 
 ## 6. Load Investment Portfolios
 
-You will now need to create a portfolio in your Investment Portfolio service and create holdings for that portfolio. The `holdings.sample.json` file provides you with sample holdings for a portfolio.  You can run the `investmentPortfolio.js` script to load portfolio and holdings.  The credentials are retrieved from `.env` file so ensure that your Investment Portfolio credentials are filled as per the [last step](#5-configure-env-file).
+You will now need to create a portfolio in your Investment Portfolio service and create holdings for that portfolio. The `data/holdings.sample1.json` file provides you with sample holdings for a portfolio.  You can run the `investmentPortfolio.js` script to load portfolio and holdings.  The credentials are retrieved from `.env` file so ensure that your Investment Portfolio credentials are filled as per the [last step](#5-configure-env-file).
 
 To load a portfolio named `MyCustomPortfolio`, first install dependencies and use the command-line with the script to create the portfolio:
 ```
@@ -223,9 +223,9 @@ node investmentPortfolio.js -l MyCustomPortfolio
 ```
 This command produces a blank investment portfolio.
 
-To populate this portfolio we are going to load holdings from `holdings.sample.json` into it, run:
+To populate this portfolio we are going to load holdings from `data/holdings.sample1.json` into it, run:
 ```
-node investmentPortfolio.js -l MyCustomPortfolio -h holdings.sample.json
+node investmentPortfolio.js -l MyCustomPortfolio -h data/holdings.sample1.json
 ```
 
 You can view a list of all of your portfolios by running:
@@ -316,15 +316,11 @@ This workshop will take the application you built in Workshop A and give you the
 ## 1. Get More Sample Data
 Currently you have one portfolio filled with sample data. However, we want to see how the system reacts in different situations. 
 
-In [Load Investment Portfolios](#6-load-investment-portfolios) you learnt how to add a portfolio to your collection. Each portfolio you add is stored in the Investment Portfolio service you set up on the IBM Cloud, which means any portfolios you create are accessible. We have provided *TODO* more sample data files:
-
-- TODO
-- TODO
-- TODO
+In [Load Investment Portfolios](#6-load-investment-portfolios) you learnt how to add a portfolio to your collection. Each portfolio you add is stored in the Investment Portfolio service you set up on the IBM Cloud, which means any portfolios you create are accessible. We have provided six more sample data files in the `data` folder. 
 
 Try creating portfolios for these files and see how the report changes. Portfolios are loaded when the page first loads, so refresh the app in your browser to see your additions.
 
-You should notice that some of the samples, the ones with only a single issuer, don't produce a report. In this workshop you will write a script in NLG Studio for them.
+You should notice that some of the samples, the ones with only a single issuer (3 and 7), don't produce a report. In this workshop you will write a script in NLG Studio for them.
 
 ## 2. Learn NLG Studio
 We are going to write a script in NLG Studio to extend the text, so you will need to learn the basics of Studio. There are two options for getting started, and your choice depends on how ambitious you're feeling. 

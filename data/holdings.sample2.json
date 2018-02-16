@@ -1,0 +1,69 @@
+{
+  "timestamp": "2017-06-07T19:53:56.830Z",
+  "holdings": [
+    {
+      "asset": "International Business Machines Corp",
+      "quantity": "1000",
+      "instrumentId": "CX_US4592001014_NYQ",
+      "companyName": "IBM",
+      "sectorName": "Technology",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Aercap Ireland Ltd",
+      "quantity": "25",
+      "instrumentId": "CX_US00772BAM37_USD",
+      "companyName": "Aercap Ireland Ltd",
+      "sectorName": "Finance Companies",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Aetna Inc",
+      "quantity": "5",
+      "instrumentId": "CX_US00817YAU29_USD",
+      "companyName": "Aetna Inc",
+      "sectorName": "Health Care",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Aetna Inc",
+      "quantity": "30",
+      "instrumentId": "CX_US00817YAW84_USD",
+      "companyName": "Aetna Inc",
+      "sectorName": "Health Care",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Microsoft Corp",
+      "quantity": "30",
+      "instrumentId": "CX_US594918AQ78_USD",
+      "companyName": "Microsoft Corp",
+      "sectorName": "Technology",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Frontier Communications Corp",
+      "quantity": "400",
+      "instrumentId": "CX_US35906AAL26_USD",
+      "companyName": "Frontier Communications Corp",
+      "sectorName": "Communications",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Frontier Communications Corp",
+      "quantity": "100",
+      "instrumentId": "CX_US35906AAN81_USD",
+      "companyName": "Frontier Communications Corp",
+      "sectorName": "Communications",
+      "assetName": "US Corporate"
+    },
+    {
+      "asset": "Fedex Corp",
+      "quantity": "200",
+      "instrumentId": "CX_US31428XAY22_USD",
+      "companyName": "Fedex Corp",
+      "sectorName": "Transportation",
+      "assetName": "US Corporate"
+    }
+  ]
+}
