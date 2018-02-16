@@ -18,7 +18,7 @@ body {
     justify-content: space-between;
     align-items: center;
     
-    background-color: #152934;
+    background-color: #ffffff;
 }
 
 #content-wrapper {
@@ -43,7 +43,7 @@ body {
 }
 
 #ibm-logo img{
-    visibility:hidden;
+    width:88px;
 }
 
 #selection {

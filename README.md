@@ -24,7 +24,6 @@ In this tutorial you will build a web application that reports on the value of p
 
 The end application looks like this:
 
-*TODO - update with logo*
 <p align="center">
   <img width="800"  src="readme_images/application.png">
 </p>
