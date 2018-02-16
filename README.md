@@ -75,7 +75,6 @@ In this workshop, you'll set up a web application on the IBM Cloud that combines
 ## 1. Clone the Repo
 
 Clone the `index-arria-workshop` locally. In a terminal, run:
-*TODO - location*
 
   `$ git clone https://github.com/arria-nlg/index-arria-workshop.git`
 
