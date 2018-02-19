@@ -1,13 +1,17 @@
 # Index IBM/Arria Workshop
 
-During this workshop, you'll learn how to assemble and deploy a web application using IBM Cloud APIs and Arria NLG Studio. You'll build an application that takes an investment portfolio and evaluates what the holdings are worth in the current market. This data is then used to produce a report using natural language generation.
+# Introduction
 
-The workshop is broken into two halves:
+During this workshop, you'll learn how to assemble and deploy a web application using IBM Cloud APIs and Arria NLG Studio. You'll build an application that takes an investment portfolio and evaluates what it is worth in the current market. This data is then used to produce a report using natural language generation. While the application you're building is about finance, the skills you're learning will work in any industry.
 
-* Setting Up the Application
-* Expanding the Narrative
+[Arria NLG](https://www.arria.com) is a company that specialises in improving communication by generating natural language reports from data. When users see facts and figures they need to interpret them. With Arria's NLG technology, applications can generate narratives that explain the data like an expert. Today we will use NLG Studio, Arria's web based UI for building NLG systems. Studio makes the best of Arria’s technology available in one robust, easy-to-use tool set. Both developers and non-developers can access the proven rules-based linguistic capabilities and software architecture that Arria uses to build NLG systems for its global clients.
 
-In the first part, you'll learn how to host the various services that make up the application. In the second part, you'll learn how you can expand the narrative using NLG Studio.  
+The workshop has three sections:
+* [The Application](#the-application)
+* [Setting Up the Application](#workshop-a---setting-up-the-application)
+* [Expanding the Narrative](#workshop-b---expanding-the-narrative)
+
+First you will get an understanding about the Application we are going to build. Next you'll learn how to host the various services that make up the application. Finally, you'll learn how you can expand the narrative using NLG Studio.  
 
 When you have finished, you'll know how to:
 
@@ -19,7 +23,24 @@ When you have finished, you'll know how to:
 - Chain these API calls together to make a node web app
 - Deploy the application on IBM Cloud 
 
+## Prerequisites
+- [node](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+- [an NLG Studio account](https://app.studio.arria.com)
+- [an IBM Cloud developer account](https://www.ibm.com/cloud/)
+- [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
+- [Google Chrome](https://www.google.com/chrome/)
+
 # The Application
+Before you start coding, we're going to show you the Application that you will build up. 
+
+## Steps
+1. [What Does It Do?](#1-what-does-it-do)
+2. [Try It](#2-try-it)
+3. [What is the Architecture?](#3-what-is-the-architecture)
+
+## 1. What Does It Do?
+
 In this tutorial you will build a web application that reports on the value of people's investment portfolios. An investment portfolio is a collection of stocks, options, and other holdings in various companies. These companies are referred to as the issuers of each holding. When we describe these issuers we tend to do so by business sector, for example, health care, IT, transport, and so on. 
 
 The end application looks like this:
@@ -28,66 +49,66 @@ The end application looks like this:
   <img width="800"  src="readme_images/application.png">
 </p>
 
-At the top of the screen, a dropdown lets you select one of your investment portfolios. Then you click **Submit** to analyze the portfolio and generate a report about it. The general workflow looks like this:
+At the top of the screen, a dropdown lets you select one of your investment portfolios. Then you click **Submit** to analyze the portfolio and generate a report about it.
 
-<p align="center">
-  <img width="800"  src="readme_images/architecture.png">
-</p>
+## 2. Try It
 
-The application is built around three main APIs:
-
-## IBM Investment Portfolio
-The IBM Investment Portfolio service stores information about a user's investment portfolios, including how many holdings they have and in which companies. This service is able to catalogue changes in the portfolio over time, but in this demo we're just going to use the most recent data.
-
-## IBM Instrument Analytics
-The IBM Instrument Analytics service takes in portfolio information and uses IBM Algorithmics pricing models to judge how much each holding is theoretically worth. This API supports all major asset classes, including equity, fixed income, forwards and futures, options, interest rate products, credit derivatives, indexes, and structured products. Instrument Analytics can calculate a variety of factors about holdings. The application you're building will use this service to value the holdings in the current financial market.
-  
-## Arria NLG Studio
-Arria NLG Studio is a web application used to build and deploy natural language generation systems. Studio can be used to produce reports for any vertical, and it follows a methodology that makes it easy to get started, then build up report complexity naturally. You'll use Studio to build an API that can describe the value of a portfolio. 
-
-<!-- # Automatically Deploying the Application to IBM Cloud
-
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/robert-hodgson1/predictive-market-using-arria.git)
-
-Be sure to [load investment portfolio](#5-load-investment-portfolio) before running the application. 
--->
-# Workshop A :  Setting Up the Application
-In this workshop, you'll set up a web application on the IBM Cloud that combines IBM Cloud Financial Services with an Arria NLG Studio project.
-
-## Prerequisites
-- [node](https://nodejs.org/en/)
-- [npm](https://www.npmjs.com/)
-- [an NLG Studio account](https://app.studio.arria.com)
-- [an IBM Cloud developer account](https://www.ibm.com/cloud/)
-- [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
-
-## Steps
-1. [Clone the Repo](#1-clone-the-repo)
-2. [Try the Application](#2-try-the-application)
-3. [Generate Text with NLG Studio](#3-generating-text-with-nlg-studio)
-4. [Create IBM Cloud Services](#4-create-ibm-cloud-services)
-5. [Configure an .env File](#5-configure-env-file)
-6. [Load Investment Portfolios](#6-load-investment-portfolios)
-7. [Run the Application Locally](#7-run-the-application-locally)
-8. [Deploy to IBM Cloud](#8-deploy-to-ibm-cloud)
-
-
-## 1. Clone the Repo
-
-Clone the `index-arria-workshop` locally. In a terminal, run:
-
-  `$ git clone https://github.com/arria-nlg/index-arria-workshop.git`
-
-
-## 2. Try the Application
-
-Before you get started, take a look at the end product you're going to build. We have hosted the application at:
+Let's take the opportunity to try it now. We have hosted the application at:
 
 https://demo-index-arria-app-wb.mybluemix.net/
 
 Test how the application works with the different portfolios and see how the narrative changes with each one.
 
-## 3. Generate Text with NLG Studio
+## 3. What is the Architecture?
+
+The application you are building is a node.js app that connects to three main APIs:
+
+### IBM Investment Portfolio
+The IBM Investment Portfolio service stores information about a user's investment portfolios, including how many holdings they have and in which companies. This service is able to catalogue changes in the portfolio over time, but in this demo we're just going to use the most recent data.
+
+### IBM Instrument Analytics
+The IBM Instrument Analytics service takes in portfolio information and uses IBM Algorithmics pricing models to judge how much each holding is theoretically worth. This API supports all major asset classes, including equity, fixed income, forwards and futures, options, interest rate products, credit derivatives, indexes, and structured products. Instrument Analytics can calculate a variety of factors about holdings. The application you're building will use this service to value the holdings in the current financial market.
+  
+### Arria NLG Studio
+Arria NLG Studio is a web application used to build and deploy natural language generation systems. Studio can be used to produce reports for any vertical, and it follows a methodology that makes it easy to get started, then build up report complexity naturally. You'll use Studio to build an API that can describe the value of a portfolio. Studio projects can be deployed immediately to Arria's cloud ecosystem. You will use a second service hosted on the IBM Cloud to make the hosting process easier.
+
+Our application will connect these three APIs together and then allow you to deploy them both locally and on the IBM Cloud.
+
+For the system to be able to generate reports about investment portfolios, it needs portfolio data. This is created using the node script InvestmentPortfolio.js. This script serves as a wrapper around the Investment Portfolio API, making it easier to create new portfolios.
+
+When you put these elements together, you get the following architecture:
+
+<p align="center">
+  <img width="681"  src="readme_images/architecture.png">
+</p> 
+
+# Workshop A :  Setting Up the Application
+In this workshop, you'll set up a web application on the IBM Cloud that combines IBM Cloud Financial Services with an Arria NLG Studio project.
+
+## Steps
+1. [Clone the Repo](#1-clone-the-repo)
+2. [Generate Text with NLG Studio](#2-generating-text-with-nlg-studio)
+3. [Create IBM Cloud Services](#3-create-ibm-cloud-services)
+4. [Configure an .env File](#4-configure-env-file)
+5. [Load Investment Portfolios](#5-load-investment-portfolios)
+6. [Run the Application Locally](#6-run-the-application-locally)
+7. [Deploy to IBM Cloud](#7-deploy-to-ibm-cloud)
+
+
+## 1. Clone the Repo
+<p align="center">
+  <img width="800"  src="readme_images/step1.png">
+</p>
+To start the workshop you need to clone the Git repository. This will give you the node.js application that you will eventually deploy.
+
+Clone the `index-arria-workshop` locally. In a terminal, run:
+
+  `$ git clone https://github.com/arria-nlg/index-arria-workshop.git`
+
+## 2. Generate Text with NLG Studio
+<p align="center">
+  <img width="800"  src="readme_images/step2.png">
+</p>
 
 To generate the language in the application you'll use Arria NLG Studio. This web-based development environment lets you write APIs that take in data and use it to produce narratives. First, you'll load in the Studio project behind the application. 
 
@@ -143,9 +164,12 @@ If you have a tool for hitting RESTful services like [Postman](https://www.getpo
 
 You can find several example data sets in the `studio/api_data` folder. The structure for the data can be seen in the `studio/api_data/dataWrapper.json` file. If you do not send any data, NLG Studio will use the sample data. 
 
-In Workshop B, you'll learn more about how to program in NLG Studio.
+In the second half of the workshop you'll learn more about how to program in NLG Studio.
 
-## 4. Create IBM Cloud Services
+## 3. Create IBM Cloud Services
+<p align="center">
+  <img width="800"  src="readme_images/step3.png">
+</p>
 
 Your application is going to use three services from the IBM Cloud: two IBM financial services and a wrapper service around NLG Studio.
 
@@ -165,7 +189,7 @@ The Arria Natural Language Generation APIs service is only needed when you are r
 
 To create a link to your Studio project, follow the [Arria Natural Language Generation APIs](https://console.bluemix.net/catalog/services/natural-language-generation-apis) link and choose a name.
 
-You also need to supply the URL and API for your published Studio service that you collected in [step 3](#3-generating-text-with-nlg-studio). Put these in the boxes provided and click **Create**.
+You also need to supply the URL and API for your published Studio service that you collected in [step 2](#2-generating-text-with-nlg-studio). Put these in the boxes provided and click **Create**.
 
 <p align="center">
   <img width="800"  src="readme_images/studio_apis.png">
@@ -173,7 +197,10 @@ You also need to supply the URL and API for your published Studio service that y
 
 Now you have three services running on IBM Cloud. Next, you'll connect them together.
 
-## 5. Configure an .env File
+## 4. Configure an .env File
+<p align="center">
+  <img width="800"  src="readme_images/step4.png">
+</p>
 
 The GitHub repository contains a basic node web app that strings together calls between the various services. To know how to connect to the services, the app uses an `.env` file.
 
@@ -204,15 +231,18 @@ The `.env` file will look like this:
   CRED_ARRIA_NATURAL_LANGUAGE_GENERATION_TOKEN=
   ```
   
-In the '.env' file, update the credentials with the IBM Cloud credentials for each of the services you created in [Create IBM Cloud Services](#4-create-ibm-cloud-services).
+In the '.env' file, update the credentials with the IBM Cloud credentials for each of the services you created in [Create IBM Cloud Services](#3-create-ibm-cloud-services).
 
 These credentials do not need quotes. 
 
 **Note:** Pay particular attention to the Portfolio credentials. There are different credentials for reading (R) and writing (W).
 
-## 6. Load Investment Portfolios
+## 5. Load Investment Portfolios
+<p align="center">
+  <img width="800"  src="readme_images/step5.png">
+</p>
 
-You will now need to create a portfolio in your Investment Portfolio service and create holdings for that portfolio. The `data/holdings.sample1.json` file provides you with sample holdings for a portfolio.  You can run the `investmentPortfolio.js` script to load the portfolio and holdings. The credentials are retrieved from the `.env` file, so make sure that your Investment Portfolio credentials are filled in as per the [last step](#5-configure-env-file).
+You will now need to create a portfolio in your Investment Portfolio service and create holdings for that portfolio. The `data/holdings.sample1.json` file provides you with sample holdings for a portfolio.  You can run the `investmentPortfolio.js` script to load the portfolio and holdings. The credentials are retrieved from the `.env` file, so make sure that your Investment Portfolio credentials are filled in as per the [last step](#4-configure-env-file).
 
 To load a portfolio named `MyCustomPortfolio`, first install dependencies and use the command line with the script to create the portfolio:
 ```
@@ -242,13 +272,19 @@ If you make a mistake and want to delete a portfolio, run:
 node investmentPortfolio.js -d MyCustomPortfolio
 ```
 
-## 7. Run the Application Locally
+## 6. Run the Application Locally
+<p align="center">
+  <img width="800"  src="readme_images/step6.png">
+</p>
 
 Now try running the whole application locally. The application is structured around `app.js`, a script that points to all of the resources in the web app. It gathers the values from the `.env` file and tells the system to use the HTML and javascript stored in the `public` folder. The code actually calling each endpoint is in `public/script/main.js`.
 
 To launch the application, run `node app.js` from the project's root directory. This will print out the port that the app is listening on. View the app by opening http://localhost:YOUR_PORT_NUMBER using the port that was printed in the console. 
 
-## 8. Deploy to IBM Cloud
+## 7. Deploy to IBM Cloud
+<p align="center">
+  <img width="800"  src="readme_images/step7.png">
+</p>
 
 Running the application locally lets you test things, but to go into production you need to deploy the app. You'll use the IBM Cloud Command Line Interface to deploy the application with a few lines of code.
 
@@ -303,9 +339,6 @@ The console will include the URL that your app is hosted on. This will typically
 # Workshop B : Expanding the Narrative
 In this workshop, you'll take the application you built in Workshop A and expand the text with Arria's NLG Studio. This workshop is loosely structured; investigate anything you find interesting.
 
-## Prerequisite
-- [Workshop A](#workshop-a---setting-up-the-application)
-
 ## Steps
 1. [Get More Sample Data](#1-get-more-sample-data)
 2. [Learn NLG Studio](#2-learn-nlg-studio)
@@ -314,7 +347,7 @@ In this workshop, you'll take the application you built in Workshop A and expand
 ## 1. Get More Sample Data
 Currently you have one portfolio filled with sample data. However, you need to see how the system reacts in different situations. 
 
-In [Load Investment Portfolios](#6-load-investment-portfolios), you learned how to add a portfolio to your collection. Each portfolio you add is stored in the Investment Portfolio service you set up on IBM Cloud, which means any portfolios you create are accessible. There are six more sample data files in the `data` folder.
+In [Load Investment Portfolios](#5-load-investment-portfolios), you learned how to add a portfolio to your collection. Each portfolio you add is stored in the Investment Portfolio service you set up on IBM Cloud, which means any portfolios you create are accessible. There are six more sample data files in the `data` folder.
 
 Try creating portfolios for these files and see how the report changes. Portfolios are loaded when the page first loads, so refresh the app in your browser to see your additions.
 
